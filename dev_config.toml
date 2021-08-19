@@ -3,6 +3,10 @@
 client_id = "37cdbb80c7733e2a1831"
 client_secret = "75e648e981545902ab7802de94e2f2707c8e0ff8"
 
+[azuread]
+client_id = "3f7ee309-c0d2-4681-b06e-775ba87621aa"
+client_secret = "V~-_VPM4i92VK5-FN5xA1~PTe0iqM.Rd9J"
+
 [sqlalchemy]
 database_url = "sqlite:///./quetz.sqlite"
 
