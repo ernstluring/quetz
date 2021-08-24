@@ -5,16 +5,17 @@ class AzureADAuthenticator(OAuthAuthenticator):
     """
 
     provider = "azuread"
+    server_metadata_url = "https://login.microsoftonline.com/organizations/v2.0/.well-known/openid-configuration"
     
     # oauth client params
-    access_token_url = ""
-    authorize_url = ""
-    api_base_url = ""
-    scope =  ""
+    access_token_url = "https://login.microsoftonline.com/organizations/oauth2/v2.0/token"
+    authorize_url = "https://login.microsoftonline.com/organizations/oauth2/v2.0/authorize"
+    api_base_url = "https://login.microsoftonline.com/organizations/v2.0"
+    scope =  "openid profile email"
 
     # endpoint urls
-    validate_token_url = "user"
-    revoke_url = ''
+    validate_token_url = "https://graph.microsoft.com/oidc/userinfo"
+    revoke_url = "https://login.microsoftonline.com/organizations/oauth2/v2.0/logout"
 
     async def userinfo(self, request, token):
         profile = await self.client.parse_id_token(request, token)
